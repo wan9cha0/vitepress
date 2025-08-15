@@ -4,7 +4,7 @@ layout: page
 
 <div class="calendar-container">
     <Card>
-        <Calendar v-model:value="value" @panelChange="onPanelChange" />
+        <Calendar v-model:value="value" locale="zh-cn"  @panelChange="onPanelChange" />
     </Card>
 </div>
 
@@ -17,8 +17,8 @@ import { Button, Calendar  , Card} from 'ant-design-vue';
 import 'ant-design-vue/dist/reset.css';
 
 const value = ref<Dayjs>();
-const onPanelChange = (date) => {
-  console.log(date);
+const onPanelChange = (value: Dayjs, mode: string) => {
+  console.log(value, mode);
 };
 </script>
 <style scoped>
